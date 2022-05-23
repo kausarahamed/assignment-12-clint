@@ -4,7 +4,7 @@ import Product from "./Product";
 const Inventory = () => {
   const [airs, setAirs] = useState([]);
   useEffect(() => {
-    fetch("Service.json")
+    fetch("http://localhost:5000/product")
       .then((response) => response.json())
       .then((data) => setAirs(data));
   }, []);
