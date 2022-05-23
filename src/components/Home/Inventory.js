@@ -1,14 +1,12 @@
 import React, { useEffect, useState } from "react";
-import { useNavigate } from "react-router-dom";
 import Product from "./Product";
 
 const Inventory = () => {
-  const navigate = useNavigate();
-  const [cycles, setCycle] = useState([]);
+  const [airs, setAirs] = useState([]);
   useEffect(() => {
     fetch("Service.json")
       .then((response) => response.json())
-      .then((data) => setCycle(data));
+      .then((data) => setAirs(data));
   }, []);
   return (
     <div>
@@ -16,17 +14,9 @@ const Inventory = () => {
         Our Parts
       </h1>
       <div className="pt-10 grid md:grid-cols-3 gap-5 py10 ">
-        {cycles.slice(0, 6).map((cycle) => (
-          <Product key={cycle._id} product={cycle} />
+        {airs.slice(0, 6).map((air) => (
+          <Product key={air._id} product={air} />
         ))}
-      </div>
-      <div className="flex justify-center">
-        <button
-          onClick={() => navigate("/inventoris")}
-          className="border-2 bg-orange-400 py-2 px-5 text-2xl rounded-lg text-white font-bold"
-        >
-          Manage Inventory
-        </button>
       </div>
     </div>
   );

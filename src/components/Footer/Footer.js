@@ -17,7 +17,7 @@ const Footer = () => {
           <div className="col">
             <img src={logo} alt="" className="logo" />
             <p>
-              This is our very much popular cycle warehouse.You trust our
+              This is our very much popular AirCooler company.You trust our
               motive.
             </p>
           </div>

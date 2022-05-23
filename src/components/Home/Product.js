@@ -1,10 +1,8 @@
 import React from "react";
-import { useNavigate } from "react-router-dom";
-import Button from "../Shared/Button";
+import { Link } from "react-router-dom";
 
 const Product = ({ product }) => {
-  const navigate = useNavigate();
-  const { _id, name, price, image, description, quantity, supplier } = product;
+  const { _id, name, price, image, description, quantity, minimum } = product;
   return (
     <div>
       <div className="mx-5 mb-10 bg-gray-200 rounded-xl  relative shadow-xl h-[700px]">
@@ -26,17 +24,24 @@ const Product = ({ product }) => {
             {price}
           </div>
           <div className="text-xl font-sans px-5 ">
-            <span className="text-2xl">Quantity: </span>
+            <span className="text-2xl">Minimum Quantity: </span>
             {quantity} Unit
           </div>
           <div className="text-xl font-sans px-5 ">
-            <span className="text-2xl">Supplier: </span>
-            {supplier}
+            <span className="text-2xl">Available Quantity: </span>
+            {quantity} Unit
+          </div>
+          <div className="text-xl font-sans px-5 ">
+            <span className="text-2xl">Minimum Order: </span>
+            {minimum} Unit
           </div>
           <div className=" mt-5 flex justify-center">
-            <Button onClick={() => navigate(`update/${_id}`)}>
-              Upadte Item
-            </Button>
+            <Link
+              className="btn btn-primary bg-gradient-to-r from-secondary to-primary"
+              to={`purchase/${_id}`}
+            >
+              Purchase
+            </Link>
           </div>
         </div>
       </div>

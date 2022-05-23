@@ -4,7 +4,8 @@
     "name": "Diamondback Hook",
     "description": "If you could only have one bike - just one - the Diamondback Hook hardtail mountain bike would be the perfect choice. For starters, it is capable of, well, just about anything you have the nerve for. That includes quick rips on your local trails, all-day sufferfests that have you pedaling away into terra incognita, and everything in between.",
     "price": 875,
-    "quantity": 4,
+    "quantity": 1000,
+    "minimum": 100,
     "supplier": "Jhon rafi",
     "image": "https://i.ibb.co/JQZS1Gj/cycle2.webp"
   },
@@ -13,7 +14,8 @@
     "name": "Aventon Sinch Foldable E-Bike",
     "description": "Your Sinch compact electric bike will fit in your closet and under your desk, meaning it's almost infinitely portable! Making this electric bike foldable means that it'll even fit in the trunk of your car or easily into your RV so you can take it anywhere with you. With 4 fat tires and a front suspension fork this ebike is ready to both cruise the pavements and conquer the trails!",
     "price": 1690,
-    "quantity": 56,
+    "quantity": 560,
+    "minimum": 100,
     "supplier": "Mike jhanker",
     "image": "https://i.ibb.co/wYsLKzz/cycle3.webp"
   },
@@ -22,7 +24,8 @@
     "name": "Diamondback Haanjo 1 Gravel Road Bike",
     "description": "The Diamondback Haanjo 1 is a bike that defies definitions and exceeds expectations. Part road bike, part mountain bike, it is designed to let you choose how and where you want to ride, whether that is commuting or gravel road adventures. You wll find the geometry is a little more relaxed than a traditional road bike, putting you in a more comfortable position for long rides and rough roads. No front derailleur on the 1*9-speed Shimano drivetrain keeps shifting simple and reliable. Wide 700*38c tires give you the confidence to keep going when things get a little rough. With mounts for fenders and racks on the frame and the steel fork, you can stay dry and bring your gear along on your next ride.",
     "price": 780,
-    "quantity": 1,
+    "quantity": 560,
+    "minimum": 100,
     "supplier": "Mark Mir",
     "image": "https://i.ibb.co/ft7hg3M/cycle4.webp"
   },
@@ -31,7 +34,8 @@
     "name": "Giant UltraSlick MTB Brake Cable Kit",
     "description": "Giant's UltraSlick MTB Brake Cable Kit has the parts needed to get your cable-actuated mountain bike brakes stopping smooth, powerful, and fast. It includes two Teflon-coated stainless steel brake cables, 1.8 meters of pre-lubricated, Kevlar-reinforced compressionless housing, and all required cable ends and ferrules.",
     "price": 40,
-    "quantity": 88,
+    "quantity": 560,
+    "minimum": 100,
     "supplier": "kausar",
     "image": "https://i.ibb.co/pzHCNJ6/cable1.jpg"
   },
@@ -40,7 +44,8 @@
     "name": "Giant UltraSlick MTB Brake Cable Kit",
     "description": "Giant's UltraSlick MTB Brake Cable Kit has the parts needed to get your cable-actuated mountain bike brakes stopping smooth, powerful, and fast. It includes two Teflon-coated stainless steel brake cables, 1.8 meters of pre-lubricated, Kevlar-reinforced compressionless housing, and all required cable ends and ferrules.",
     "price": 40,
-    "quantity": 88,
+    "quantity": 560,
+    "minimum": 100,
     "supplier": "kausar",
     "image": "https://i.ibb.co/pzHCNJ6/cable1.jpg"
   },
@@ -49,7 +54,8 @@
     "name": "Giant UltraSlick MTB Brake Cable Kit",
     "description": "Giant's UltraSlick MTB Brake Cable Kit has the parts needed to get your cable-actuated mountain bike brakes stopping smooth, powerful, and fast. It includes two Teflon-coated stainless steel brake cables, 1.8 meters of pre-lubricated, Kevlar-reinforced compressionless housing, and all required cable ends and ferrules.",
     "price": 40,
-    "quantity": 88,
+    "quantity": 560,
+    "minimum": 100,
     "supplier": "kausar",
     "image": "https://i.ibb.co/pzHCNJ6/cable1.jpg"
   }
