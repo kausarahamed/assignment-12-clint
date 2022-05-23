@@ -8,6 +8,7 @@ import { Link, useLocation, useNavigate } from "react-router-dom";
 import { toast, ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import auth from "../../../firebase.init";
+import Loading from "../../Shared/Loading";
 
 const Login = () => {
   const [email, setEmail] = useState("");
@@ -75,7 +76,7 @@ const Login = () => {
           />
         </div>
 
-        {(loading || sending) && <p>Loading</p>}
+        {(loading || sending) && <Loading></Loading>}
 
         {(error || ResetPassError) && (
           <p className="text-red-600">

@@ -6,6 +6,7 @@ import {
 } from "react-firebase-hooks/auth";
 import { Link, useNavigate } from "react-router-dom";
 import auth from "../../../firebase.init";
+import Loading from "../../Shared/Loading";
 
 const Register = () => {
   const [name, setName] = useState("");
@@ -37,14 +38,12 @@ const Register = () => {
   const handleSubmit = async (e) => {
     e.preventDefault();
     if (password !== confirmPassword) {
-      console.log(" password mich match");
       return;
     }
     await createUserWithEmailAndPassword(email, password);
     await updateProfile({ displayName: name });
   };
   if (user || userOne) {
-    console.log("login success", { id: "login" });
     navigate("/");
   }
 
@@ -102,7 +101,7 @@ const Register = () => {
             required
           />
         </div>
-        {(loading || updating) && <p>Loading</p>}
+        {(loading || updating) && <Loading></Loading>}
         {(error || updateError) && (
           <p className="text-red-600">
             {error.message} {updateError.message}

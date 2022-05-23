@@ -7,7 +7,7 @@ import { useAuthState } from "react-firebase-hooks/auth";
 const Navber = () => {
   const [user] = useAuthState(auth);
   return (
-    <div class="navbar bg-base-100 bg-gradient-to-r from-secondary to-primary text-white">
+    <div class="navbar bg-base-100 bg-gradient-to-r from-secondary to-primary text-white text-xl">
       <div class="navbar-start">
         <div class="dropdown">
           <label tabindex="0" class="btn btn-ghost lg:hidden">
