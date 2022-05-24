@@ -1,7 +1,9 @@
 import React, { useEffect, useState } from "react";
 import { useAuthState } from "react-firebase-hooks/auth";
 import { useParams } from "react-router-dom";
+import Swal from "sweetalert2";
 import auth from "../firebase.init";
+import Alart from "./Shared/Alart";
 
 const Purchase = () => {
   const { id } = useParams();
@@ -16,21 +18,24 @@ const Purchase = () => {
   // form
   const handleForm = (e) => {
     e.preventDefault();
-    const addQuantity = e.target.quantity.value;
     const name = e.target.name.value;
     const email = e.target.email.value;
     const number = e.target.number.value;
-    const newQuantity = quantity + +addQuantity;
+    const address = e.target.address.value;
+    const productQuantity = e.target.productQuantity.value;
+    const order = { name, email, number, address, productQuantity };
+    // console.log(order);
 
-    fetch(`https://intense-stream-06695.herokuapp.com/user/${id}`, {
-      method: "PUT",
+    fetch(`http://localhost:5000/order`, {
+      method: "post",
       headers: { "content-type": "application/json" },
-      body: JSON.stringify({ newQuantity }),
+      body: JSON.stringify({ order }),
     })
       .then((res) => res.json())
       .then((data) => {
-        if (data.modifiedCount > 0) {
-          alert("Quantity Added Successfully");
+        console.log(data);
+        if (data.insertedId) {
+          Swal.fire("Your Order is Confirmed. Please pay");
           e.target.reset();
         }
       });
@@ -49,9 +54,7 @@ const Purchase = () => {
             <h3 className="text-4xl font-serif italic text-center text-blue-500 font-bold pt-1">
               {name}
             </h3>
-            <div className="text-xl font-sans px-5 ">
-              {description.slice(0, 100)}
-            </div>
+            <div className="text-xl font-sans px-5 ">{description}</div>
             <div className="absolute bottom-0 w-full">
               <div className="text-xl font-sans px-5 ">
                 <span className="text-2xl">Price: $</span>
@@ -83,6 +86,7 @@ const Purchase = () => {
                 <input
                   type="text"
                   placeholder="Name"
+                  name="name"
                   class="input input-bordered"
                   value={user?.displayName}
                   disabled
@@ -94,6 +98,7 @@ const Purchase = () => {
                 </label>
                 <input
                   type="text"
+                  name="email"
                   placeholder="E-mail"
                   class="input input-bordered"
                   value={user?.email}
@@ -107,8 +112,9 @@ const Purchase = () => {
                 <input
                   type="number"
                   placeholder="Phone"
+                  name="number"
                   class="input input-bordered"
-                  // value={number}
+                  required
                 />
               </div>
               <div class="form-control">
@@ -119,7 +125,8 @@ const Purchase = () => {
                   type="text"
                   placeholder="Address"
                   class="input input-bordered"
-                  // value={address}
+                  name="address"
+                  required
                 />
               </div>
               <div class="form-control">
@@ -130,7 +137,8 @@ const Purchase = () => {
                   type="number"
                   placeholder="Quantity"
                   class="input input-bordered"
-                  // value={productQuantity}
+                  name="productQuantity"
+                  required
                 />
               </div>
 
