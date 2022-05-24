@@ -15,15 +15,23 @@ const Purchase = () => {
       .then((data) => setproduct(data));
   }, [id]);
   const { name, price, image, description, quantity, minimum } = product;
+  const [quantityError, setQuantityError] = useState("");
+
   // form
   const handleForm = (e) => {
     e.preventDefault();
+    setQuantityError("");
     const name = e.target.name.value;
     const email = e.target.email.value;
     const number = e.target.number.value;
     const address = e.target.address.value;
     const productQuantity = e.target.productQuantity.value;
     const order = { name, email, number, address, productQuantity };
+    if (+productQuantity < +minimum || +productQuantity > +quantity) {
+      return setQuantityError(
+        `Please Order Minimum ${minimum} Maximum ${quantity}`
+      );
+    }
     // console.log(order);
     fetch(`http://localhost:5000/order`, {
       method: "post",
@@ -137,6 +145,7 @@ const Purchase = () => {
                   required
                 />
               </div>
+              {quantityError && <p className="text-red-600">{quantityError}</p>}
 
               <div class="form-control mt-6">
                 <button class="btn btn-primary bg-gradient-to-r from-secondary to-primary">
