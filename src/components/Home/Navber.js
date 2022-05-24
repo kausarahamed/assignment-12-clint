@@ -9,7 +9,7 @@ const Navber = () => {
   return (
     <div class="navbar bg-base-100 bg-gradient-to-r from-secondary to-primary text-white text-xl">
       <div class="navbar-start">
-        <div class="dropdown">
+        <div class="dropdown ">
           <label tabindex="0" class="btn btn-ghost lg:hidden">
             <svg
               xmlns="http://www.w3.org/2000/svg"
@@ -40,7 +40,7 @@ const Navber = () => {
                 Blogs
               </Link>
             </li>
-            <li>
+            <li className="text-orange-500">
               {user?.uid && (
                 <>
                   {" "}
@@ -49,9 +49,6 @@ const Navber = () => {
                   </Link>
                   <Link className="mr-4" to="/dashboard">
                     DashBoard
-                  </Link>
-                  <Link className="mr-4" to="/myitem">
-                    My Item
                   </Link>
                 </>
               )}
@@ -94,6 +91,24 @@ const Navber = () => {
             )}
           </li>
         </ul>
+      </div>
+      <div className="navber-end">
+        <label tabindex="1" for="my-drawer-2" class="btn btn-ghost lg:hidden">
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            class="h-5 w-5"
+            fill="none"
+            viewBox="0 0 24 24"
+            stroke="currentColor"
+          >
+            <path
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              stroke-width="2"
+              d="M4 6h16M4 12h8m-8 6h16"
+            />
+          </svg>
+        </label>
       </div>
     </div>
   );

@@ -3,12 +3,12 @@ import { useAuthState } from "react-firebase-hooks/auth";
 import { useParams } from "react-router-dom";
 import Swal from "sweetalert2";
 import auth from "../firebase.init";
-import Alart from "./Shared/Alart";
 
 const Purchase = () => {
   const { id } = useParams();
   const [user] = useAuthState(auth);
   const [product, setproduct] = useState({});
+  console.log(product);
   useEffect(() => {
     fetch(`http://localhost:5000/purchase/${id}`)
       .then((response) => response.json())
@@ -25,7 +25,6 @@ const Purchase = () => {
     const productQuantity = e.target.productQuantity.value;
     const order = { name, email, number, address, productQuantity };
     // console.log(order);
-
     fetch(`http://localhost:5000/order`, {
       method: "post",
       headers: { "content-type": "application/json" },
@@ -60,10 +59,7 @@ const Purchase = () => {
                 <span className="text-2xl">Price: $</span>
                 {price}
               </div>
-              <div className="text-xl font-sans px-5 ">
-                <span className="text-2xl">Minimum Quantity: </span>
-                {quantity} Unit
-              </div>
+
               <div className="text-xl font-sans px-5 ">
                 <span className="text-2xl">Available Quantity: </span>
                 {quantity} Unit

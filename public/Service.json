@@ -5,16 +5,14 @@
     "price": 875,
     "quantity": 1000,
     "minimum": 100,
-    "supplier": "Jhon rafi",
     "image": "https://i.ibb.co/JQZS1Gj/cycle2.webp"
   },
   {
     "name": "Aventon Sinch Foldable E-Bike",
     "description": "Your Sinch compact electric bike will fit in your closet and under your desk, meaning it's almost infinitely portable! Making this electric bike foldable means that it'll even fit in the trunk of your car or easily into your RV so you can take it anywhere with you. With 4 fat tires and a front suspension fork this ebike is ready to both cruise the pavements and conquer the trails!",
     "price": 1690,
-    "quantity": 560,
+    "quantity": 990,
     "minimum": 100,
-    "supplier": "Mike jhanker",
     "image": "https://i.ibb.co/wYsLKzz/cycle3.webp"
   },
   {
@@ -23,34 +21,30 @@
     "price": 780,
     "quantity": 560,
     "minimum": 100,
-    "supplier": "Mark Mir",
     "image": "https://i.ibb.co/ft7hg3M/cycle4.webp"
   },
   {
     "name": "Giant UltraSlick MTB Brake Cable Kit",
     "description": "Giant's UltraSlick MTB Brake Cable Kit has the parts needed to get your cable-actuated mountain bike brakes stopping smooth, powerful, and fast. It includes two Teflon-coated stainless steel brake cables, 1.8 meters of pre-lubricated, Kevlar-reinforced compressionless housing, and all required cable ends and ferrules.",
-    "price": 40,
-    "quantity": 560,
+    "price": 485,
+    "quantity": 400,
     "minimum": 100,
-    "supplier": "kausar",
     "image": "https://i.ibb.co/pzHCNJ6/cable1.jpg"
   },
   {
     "name": "Giant UltraSlick MTB Brake Cable Kit",
     "description": "Giant's UltraSlick MTB Brake Cable Kit has the parts needed to get your cable-actuated mountain bike brakes stopping smooth, powerful, and fast. It includes two Teflon-coated stainless steel brake cables, 1.8 meters of pre-lubricated, Kevlar-reinforced compressionless housing, and all required cable ends and ferrules.",
-    "price": 40,
-    "quantity": 560,
+    "price": 297,
+    "quantity": 500,
     "minimum": 100,
-    "supplier": "kausar",
     "image": "https://i.ibb.co/pzHCNJ6/cable1.jpg"
   },
   {
     "name": "Giant UltraSlick MTB Brake Cable Kit",
     "description": "Giant's UltraSlick MTB Brake Cable Kit has the parts needed to get your cable-actuated mountain bike brakes stopping smooth, powerful, and fast. It includes two Teflon-coated stainless steel brake cables, 1.8 meters of pre-lubricated, Kevlar-reinforced compressionless housing, and all required cable ends and ferrules.",
-    "price": 40,
+    "price": 520,
     "quantity": 560,
     "minimum": 100,
-    "supplier": "kausar",
     "image": "https://i.ibb.co/pzHCNJ6/cable1.jpg"
   }
 ]

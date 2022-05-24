@@ -23,10 +23,7 @@ const Product = ({ product }) => {
             <span className="text-2xl">Price: $</span>
             {price}
           </div>
-          <div className="text-xl font-sans px-5 ">
-            <span className="text-2xl">Minimum Quantity: </span>
-            {quantity} Unit
-          </div>
+
           <div className="text-xl font-sans px-5 ">
             <span className="text-2xl">Available Quantity: </span>
             {quantity} Unit
