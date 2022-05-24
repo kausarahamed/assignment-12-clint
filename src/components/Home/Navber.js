@@ -65,7 +65,7 @@ const Navber = () => {
         </div>
         <a class="btn btn-ghost normal-case text-xl">AirCool</a>
       </div>
-      <div class="navbar-center hidden lg:flex">
+      <div class="navbar-center hidden  lg:flex">
         <ul class="menu menu-horizontal p-0">
           <li>
             <Link className="mr-4" to="/">
@@ -80,20 +80,15 @@ const Navber = () => {
           <li>
             {user?.uid && (
               <>
-                {" "}
-                <Link className="mr-4" to="/inventoris">
-                  Inventories
-                </Link>
                 <Link className="mr-4" to="/dashboard">
                   DashBoard
-                </Link>
-                <Link className="mr-4" to="/myitem">
-                  My Item
                 </Link>
               </>
             )}
             {user ? (
-              <button onClick={() => signOut(auth)}>Log out</button>
+              <button className="font-semibold" onClick={() => signOut(auth)}>
+                Log out
+              </button>
             ) : (
               <Link to="/login">Login</Link>
             )}
