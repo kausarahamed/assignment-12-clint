@@ -4,7 +4,7 @@ import Product from "./Product";
 const Inventory = () => {
   const [airs, setAirs] = useState([]);
   useEffect(() => {
-    fetch("http://localhost:5000/product")
+    fetch("http://localhost:5000/items")
       .then((response) => response.json())
       .then((data) => setAirs(data));
   }, []);
@@ -14,7 +14,7 @@ const Inventory = () => {
         Our Parts
       </h1>
       <div className="pt-10 grid md:grid-cols-3 gap-5 py10 ">
-        {airs.slice(0, 6).map((air) => (
+        {airs.map((air) => (
           <Product key={air._id} product={air} />
         ))}
       </div>

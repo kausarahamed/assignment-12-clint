@@ -1,5 +1,6 @@
 import React from "react";
 import { useAuthState } from "react-firebase-hooks/auth";
+import Swal from "sweetalert2";
 import auth from "../../firebase.init";
 
 const AddItem = () => {
@@ -8,6 +9,7 @@ const AddItem = () => {
     const name = event.target.name.value;
     const email = event.target.email.value;
     const image = event.target.image.value;
+    const minimum = event.target.minimum.value;
     const quantity = event.target.quantity.value;
     const description = event.target.description.value;
     const price = event.target.price.value;
@@ -16,6 +18,7 @@ const AddItem = () => {
       name,
       email,
       image,
+      minimum,
       description,
       quantity,
       price,
@@ -31,7 +34,13 @@ const AddItem = () => {
       .then((data) => {
         if (data.insertedId) {
           event.target.reset();
-          alert("Add Succesfully");
+          Swal.fire({
+            position: "top-center",
+            icon: "success",
+            title: "Your product add successfully",
+            showConfirmButton: false,
+            timer: 1500,
+          });
         }
       });
   };
@@ -75,6 +84,14 @@ const AddItem = () => {
           name="description"
           id=""
           placeholder="Description"
+          required
+        />
+        <input
+          className="border-2 rounded-xl p-2 w-full block mb-5"
+          type="text"
+          name="minimum"
+          id=""
+          placeholder="minimum"
           required
         />
 
