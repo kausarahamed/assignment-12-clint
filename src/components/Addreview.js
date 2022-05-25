@@ -1,12 +1,39 @@
-import React from "react";
+import React, { useState } from "react";
 import { useAuthState } from "react-firebase-hooks/auth";
 import auth from "../firebase.init";
+import Button from "./Shared/Button";
 
 const Addreview = () => {
   const [user] = useAuthState(auth);
+  const [rattingError, setRattingError] = useState("");
+  const handleForm = (e) => {
+    e.preventDefault();
+    const name = e.target.name.value;
+    const comment = e.target.comment.value;
+    const ratting = e.target.ratting.value;
+    if (ratting < 0 || ratting > 5) {
+      return setRattingError("Ratting Will Be Between 0 to 5 ");
+    }
+    setRattingError("");
+    const review = { name, comment, ratting };
+    console.log(review);
+
+    fetch("http://localhost:5000/addreview", {
+      method: "POST",
+      headers: {
+        "content-type": "application/json",
+      },
+      body: JSON.stringify(review),
+    })
+      .then((res) => res.json())
+      .then((data) => {
+        e.target.reset();
+        console.log(data);
+      });
+  };
   return (
     <div>
-      <form>
+      <form onSubmit={handleForm}>
         <div class="card-body">
           <div class="form-control">
             <label class="label">
@@ -44,6 +71,10 @@ const Addreview = () => {
             />
           </div>
         </div>
+        {rattingError && <p className="text-red-500">{rattingError}</p>}
+        <span className="text-center">
+          <Button>Add Review</Button>
+        </span>
       </form>
     </div>
   );
