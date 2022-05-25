@@ -9,10 +9,12 @@ import Footer from "./components/Footer/Footer";
 import Home from "./components/Home/Home";
 
 import Navber from "./components/Home/Navber";
+import MyItem from "./components/MyItem";
 import MyProfile from "./components/MyProfile";
 import Notfound from "./components/notfound/Notfound";
 import Order from "./components/Order";
 import Purchase from "./components/Purchase";
+import AddItem from "./components/Shared/AddItem";
 import Blogs from "./components/Shared/Blogs";
 
 function App() {
@@ -34,6 +36,8 @@ function App() {
           <Route index element={<MyProfile></MyProfile>}></Route>
           <Route path="order" element={<Order></Order>}></Route>
           <Route path="addreview" element={<Addreview></Addreview>}></Route>
+          <Route path="additem" element={<AddItem></AddItem>}></Route>
+          <Route path="myitem" element={<MyItem></MyItem>}></Route>
         </Route>
         <Route
           path="/purchase/:id"

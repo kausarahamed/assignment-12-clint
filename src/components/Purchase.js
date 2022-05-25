@@ -32,7 +32,7 @@ const Purchase = () => {
         `Please Order Minimum ${minimum} Maximum ${quantity}`
       );
     }
-    // console.log(order);
+
     fetch(`http://localhost:5000/order`, {
       method: "post",
       headers: { "content-type": "application/json" },
@@ -40,7 +40,6 @@ const Purchase = () => {
     })
       .then((res) => res.json())
       .then((data) => {
-        console.log(data);
         if (data.insertedId) {
           Swal.fire("Your Order is Confirmed. Please pay");
           e.target.reset();

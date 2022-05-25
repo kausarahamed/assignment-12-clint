@@ -12,7 +12,7 @@ const Reviews = () => {
 
   return (
     <div className="grid md:grid-cols-3 gap-10 pt-7 pb-14 px-10">
-      {reviwe.map((reviwe) => (
+      {reviwe.slice(-3).map((reviwe) => (
         <div className="bg-white rounded-xl py-2">
           <h2 className="font-bold text-lg px-5 pb-2">{reviwe.name}</h2>
           <p className="px-5 pb-3 text-justify">{reviwe.comment}</p>

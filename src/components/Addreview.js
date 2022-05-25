@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import { useAuthState } from "react-firebase-hooks/auth";
+import Swal from "sweetalert2";
 import auth from "../firebase.init";
 import Button from "./Shared/Button";
 
@@ -16,7 +17,6 @@ const Addreview = () => {
     }
     setRattingError("");
     const review = { name, comment, ratting };
-    console.log(review);
 
     fetch("http://localhost:5000/addreview", {
       method: "POST",
@@ -27,8 +27,8 @@ const Addreview = () => {
     })
       .then((res) => res.json())
       .then((data) => {
+        Swal.fire("Your Review Add Successfully");
         e.target.reset();
-        console.log(data);
       });
   };
   return (
