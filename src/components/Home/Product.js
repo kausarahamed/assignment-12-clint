@@ -16,7 +16,9 @@ const Product = ({ product }) => {
         </h3>
         <div className="text-xl font-sans px-5 ">
           {description.slice(0, 150)}{" "}
-          <span className="text-orange-400">Read More...</span>
+          <span className="text-orange-400">
+            {description.length > 150 ? "Read More..." : ""}
+          </span>
         </div>
         <div className="absolute bottom-0 w-full">
           <div className="text-xl font-sans px-5 ">

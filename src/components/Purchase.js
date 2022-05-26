@@ -21,12 +21,20 @@ const Purchase = () => {
   const handleForm = (e) => {
     e.preventDefault();
     setQuantityError("");
-    const name = e.target.name.value;
+    const username = e.target.name.value;
     const email = e.target.email.value;
     const number = e.target.number.value;
     const address = e.target.address.value;
     const productQuantity = e.target.productQuantity.value;
-    const order = { name, email, number, address, productQuantity };
+    const order = {
+      username,
+      name,
+      email,
+      number,
+      address,
+      productQuantity,
+      image,
+    };
     if (+productQuantity < +minimum || +productQuantity > +quantity) {
       return setQuantityError(
         `Please Order Minimum ${minimum} Maximum ${quantity}`

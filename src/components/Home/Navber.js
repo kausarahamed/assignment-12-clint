@@ -40,13 +40,14 @@ const Navber = () => {
                 Blogs
               </Link>
             </li>
+            <li>
+              <Link className="mr-4" to="/portfolio">
+                Portfolio
+              </Link>
+            </li>
             <li className="text-orange-500">
               {user?.uid && (
                 <>
-                  {" "}
-                  <Link className="mr-4" to="/inventoris">
-                    Inventories
-                  </Link>
                   <Link className="mr-4" to="/dashboard">
                     DashBoard
                   </Link>
@@ -72,6 +73,11 @@ const Navber = () => {
           <li>
             <Link className="mr-4" to="/blogs">
               Blogs
+            </Link>
+          </li>
+          <li>
+            <Link className="mr-4" to="/portfolio">
+              Portfolio
             </Link>
           </li>
           <li>
