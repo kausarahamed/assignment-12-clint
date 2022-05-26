@@ -8,7 +8,7 @@ const Order = () => {
     fetch("http://localhost:5000/order")
       .then((response) => response.json())
       .then((json) => setAllOrder(json));
-  }, []);
+  }, [Order]);
 
   return (
     <div className="grid md:grid-cols-3 gap-5 px-5">

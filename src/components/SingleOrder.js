@@ -1,10 +1,11 @@
 import React from "react";
-import { Navigate } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 import Swal from "sweetalert2";
 import Button from "./Shared/Button";
 import { MdDeleteForever } from "react-icons/md";
 
 const SingleOrder = ({ order }) => {
+  const navigate = useNavigate();
   const deleteHandeler = (id) => {
     const confirm = window.confirm("Are You Sure");
     if (confirm) {
@@ -13,8 +14,8 @@ const SingleOrder = ({ order }) => {
       })
         .then((response) => response.json())
         .then((data) => {
-          if (data.deletedCount > 0) {
-            Navigate("/");
+          if (data.deletedCount) {
+            navigate("/");
             Swal.fire({
               position: "top-center",
               icon: "success",
@@ -37,9 +38,10 @@ const SingleOrder = ({ order }) => {
       </div>
       <span className="flex justify-between p-5">
         <Button>Buy Now</Button>
-        <Button onClick={() => deleteHandeler(order._id)}>
+
+        <button onClick={() => deleteHandeler(order._id)}>
           <MdDeleteForever />
-        </Button>
+        </button>
       </span>
     </div>
   );
