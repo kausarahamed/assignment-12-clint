@@ -2,6 +2,7 @@ import { Route, Routes } from "react-router-dom";
 import "./App.css";
 import About from "./components/About";
 import Addreview from "./components/Addreview";
+import MakeAdmin from "./components/Admin/MakeAdmin";
 import Login from "./components/Auth/Login/Login";
 import Register from "./components/Auth/Login/Register";
 import RequierAuth from "./components/Auth/RequierAuth/RequierAuth";
@@ -40,6 +41,7 @@ function App() {
           <Route path="addreview" element={<Addreview></Addreview>}></Route>
           <Route path="additem" element={<AddItem></AddItem>}></Route>
           <Route path="myitem" element={<MyItem></MyItem>}></Route>
+          <Route path="makeadmin" element={<MakeAdmin></MakeAdmin>}></Route>
         </Route>
         <Route
           path="/purchase/:id"
