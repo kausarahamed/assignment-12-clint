@@ -1,7 +1,6 @@
 import React from "react";
-import { useNavigate } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import Swal from "sweetalert2";
-import Button from "./Shared/Button";
 import { MdDeleteForever } from "react-icons/md";
 
 const SingleOrder = ({ order }) => {
@@ -28,16 +27,28 @@ const SingleOrder = ({ order }) => {
     }
   };
 
-  const { name, image, productQuantity } = order;
+  const { name, image, productQuantity, price, paid } = order;
   return (
     <div class="card  bg-base-100 shadow-xl">
       <div class="card-body">
         <h2 class="card-title">{name}</h2>
         <img src={image} alt="" />
         <p>Order: {productQuantity} Unit</p>
+        <p>Price: ${price}</p>
       </div>
       <span className="flex justify-between p-5">
-        <Button>Buy Now</Button>
+        {/* <button>Pay Now</button> */}
+        {price && !paid && (
+          <Link
+            to={`/dashboard/payment/${order._id}`}
+            className="btn btn-square btn-success"
+          >
+            Pay
+          </Link>
+        )}
+        {price && paid && (
+          <span className="btn btn-square btn-success">Paid</span>
+        )}
 
         <button onClick={() => deleteHandeler(order._id)}>
           <MdDeleteForever />

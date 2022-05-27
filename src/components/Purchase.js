@@ -34,6 +34,7 @@ const Purchase = () => {
       address,
       productQuantity,
       image,
+      price,
     };
     if (+productQuantity < +minimum || +productQuantity > +quantity) {
       return setQuantityError(

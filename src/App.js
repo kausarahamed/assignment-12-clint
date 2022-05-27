@@ -18,6 +18,7 @@ import Order from "./components/Order";
 import Purchase from "./components/Purchase";
 import AddItem from "./components/Shared/AddItem";
 import Blogs from "./components/Shared/Blogs";
+import Payment from "./components/Shared/Payment";
 
 function App() {
   return (
@@ -38,6 +39,7 @@ function App() {
         >
           <Route index element={<MyProfile></MyProfile>}></Route>
           <Route path="order" element={<Order></Order>}></Route>
+          <Route path="payment/:id" element={<Payment></Payment>}></Route>
           <Route path="addreview" element={<Addreview></Addreview>}></Route>
           <Route path="additem" element={<AddItem></AddItem>}></Route>
           <Route path="myitem" element={<MyItem></MyItem>}></Route>

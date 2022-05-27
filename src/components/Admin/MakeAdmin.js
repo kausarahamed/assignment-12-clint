@@ -39,7 +39,8 @@ const MakeAdmin = () => {
           <tr>
             <th>Name</th>
             <th>Email</th>
-            <th>Favorite Color</th>
+
+            <th>Make Admin</th>
           </tr>
         </thead>
         <tbody>
@@ -47,6 +48,7 @@ const MakeAdmin = () => {
             <tr>
               <td>{user.name}</td>
               <td>{user.email}</td>
+
               <span className="flex gap-5">
                 <Button>Make Admin</Button>
                 <button onClick={() => deleteHandeler(user._id)}>
