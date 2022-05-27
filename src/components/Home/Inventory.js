@@ -4,7 +4,7 @@ import Product from "./Product";
 const Inventory = () => {
   const [airs, setAirs] = useState([]);
   useEffect(() => {
-    fetch("http://localhost:5000/items")
+    fetch("https://pacific-lowlands-87873.herokuapp.com/items")
       .then((response) => response.json())
       .then((data) => setAirs(data));
   }, []);

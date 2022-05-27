@@ -10,7 +10,7 @@ const Purchase = () => {
   const [product, setproduct] = useState({});
   console.log(product);
   useEffect(() => {
-    fetch(`http://localhost:5000/purchase/${id}`)
+    fetch(`https://pacific-lowlands-87873.herokuapp.com/purchase/${id}`)
       .then((response) => response.json())
       .then((data) => setproduct(data));
   }, [id]);
@@ -42,7 +42,7 @@ const Purchase = () => {
       );
     }
 
-    fetch(`http://localhost:5000/order`, {
+    fetch(`https://pacific-lowlands-87873.herokuapp.com/order`, {
       method: "post",
       headers: { "content-type": "application/json" },
       body: JSON.stringify({ order }),

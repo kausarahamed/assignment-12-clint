@@ -8,7 +8,7 @@ const SingleOrder = ({ order }) => {
   const deleteHandeler = (id) => {
     const confirm = window.confirm("Are You Sure");
     if (confirm) {
-      fetch(`http://localhost:5000/orders/${id}`, {
+      fetch(`https://pacific-lowlands-87873.herokuapp.com/orders/${id}`, {
         method: "delete",
       })
         .then((response) => response.json())

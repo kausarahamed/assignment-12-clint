@@ -6,7 +6,7 @@ import { MdDeleteForever } from "react-icons/md";
 const MakeAdmin = () => {
   const [users, setUsers] = useState([]);
   useEffect(() => {
-    fetch("http://localhost:5000/users")
+    fetch("https://pacific-lowlands-87873.herokuapp.com/users")
       .then((res) => res.json())
       .then((data) => setUsers(data));
   }, [users]);
@@ -22,7 +22,7 @@ const MakeAdmin = () => {
       confirmButtonText: "Yes, delete it!",
     }).then((result) => {
       if (result.isConfirmed) {
-        fetch(`http://localhost:5000/user/${id}`, {
+        fetch(`https://pacific-lowlands-87873.herokuapp.com/user/${id}`, {
           method: "delete",
         })
           .then((res) => res.json())

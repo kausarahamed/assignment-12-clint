@@ -5,7 +5,7 @@ import { AiFillStar, AiOutlineStar } from "react-icons/ai";
 const Reviews = () => {
   const [reviwe, setreviwe] = useState([]);
   useEffect(() => {
-    fetch(`http://localhost:5000/addreview`)
+    fetch(`https://pacific-lowlands-87873.herokuapp.com/addreview`)
       .then((response) => response.json())
       .then((data) => setreviwe(data));
   }, []);

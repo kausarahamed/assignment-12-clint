@@ -9,7 +9,7 @@ const MyProfile = () => {
   const [profile, setProfile] = useState({});
   const { education, number, address, linkedin } = profile;
   useEffect(() => {
-    fetch(`http://localhost:5000/user/${user.email}`)
+    fetch(`https://pacific-lowlands-87873.herokuapp.com/user/${user.email}`)
       .then((res) => res.json())
       .then((data) => setProfile(data));
   }, [user.email, profile]);
@@ -24,7 +24,7 @@ const MyProfile = () => {
     const linkedin = e.target.linkedin.value;
     const profile = { name, email, number, address, education, linkedin };
 
-    fetch(`http://localhost:5000/user/${email}`, {
+    fetch(`https://pacific-lowlands-87873.herokuapp.com/user/${email}`, {
       method: "put",
       headers: {
         "content-type": "application/json",

@@ -8,7 +8,7 @@ const MyItem = () => {
 
   const [products, setproduct] = useState([]);
   useEffect(() => {
-    fetch(`http://localhost:5000/items`)
+    fetch(`https://pacific-lowlands-87873.herokuapp.com/items`)
       .then((response) => response.json())
       .then((data) => setproduct(data));
   }, []);
@@ -16,7 +16,7 @@ const MyItem = () => {
   const deleteHandeler = (id) => {
     const confirm = window.confirm("Are You Sure");
     if (confirm) {
-      fetch(`http://localhost:5000/items/${id}`, {
+      fetch(`https://pacific-lowlands-87873.herokuapp.com/items/${id}`, {
         method: "delete",
       })
         .then((response) => response.json())

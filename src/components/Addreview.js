@@ -18,7 +18,7 @@ const Addreview = () => {
     setRattingError("");
     const review = { name, comment, ratting };
 
-    fetch("http://localhost:5000/addreview", {
+    fetch("https://pacific-lowlands-87873.herokuapp.com/addreview", {
       method: "POST",
       headers: {
         "content-type": "application/json",

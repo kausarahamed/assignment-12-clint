@@ -23,7 +23,7 @@ const AddItem = () => {
       quantity,
       price,
     };
-    fetch("http://localhost:5000/addProduct", {
+    fetch("https://pacific-lowlands-87873.herokuapp.com/addProduct", {
       method: "POST",
       body: JSON.stringify(product),
       headers: {

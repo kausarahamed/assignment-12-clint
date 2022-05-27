@@ -5,18 +5,21 @@ const Checkoutfrom = ({ book }) => {
   const stripe = useStripe();
   const elements = useElements();
   const [cardError, setCardError] = useState("");
+  const [success, setSuccess] = useState("");
+  const [processing, setProcessing] = useState(false);
+  const [trxId, setTrxId] = useState("");
   const [clintSecret, setClintSecret] = useState("");
-  console.log(clintSecret);
-  const { price } = book;
+
+  const { _id, price, name, email } = book;
   useEffect(() => {
-    fetch("http://localhost:5000/create-payment-intent", {
-      method: "post",
-      headers: { "content-type": "application/json" },
-      body: JSON.stringify({ price }),
-      //   method: "POST",
-      //   headers: { "content-type": "application/json" },
-      //   body: JSON.stringify({ price }),
-    })
+    fetch(
+      "https://pacific-lowlands-87873.herokuapp.com/create-payment-intent",
+      {
+        method: "post",
+        headers: { "content-type": "application/json" },
+        body: JSON.stringify({ price }),
+      }
+    )
       .then((res) => res.json())
       .then((data) => {
         console.log(data);
@@ -43,6 +46,45 @@ const Checkoutfrom = ({ book }) => {
       setCardError(error?.message || "");
     } else {
       setCardError("");
+    }
+    setSuccess("");
+    setProcessing(true);
+    //confirm
+    const { paymentIntent, error: intentError } =
+      await stripe.confirmCardPayment(clintSecret, {
+        payment_method: {
+          card: card,
+          billing_details: {
+            name: name,
+            email: email,
+          },
+        },
+      });
+    if (intentError) {
+      setCardError(intentError?.message);
+      setProcessing(false);
+    } else {
+      setCardError("");
+      setTrxId(paymentIntent.id);
+
+      setSuccess("Your payment is success");
+      //success
+      const payment = {
+        book: _id,
+        trxId: paymentIntent.id,
+      };
+      fetch(`https://pacific-lowlands-87873.herokuapp.com/booking/${_id}`, {
+        method: "PATCH",
+        headers: {
+          "content-type": "application/json",
+        },
+        body: JSON.stringify(payment),
+      })
+        .then((response) => response.json())
+        .then((data) => {
+          console.log(data);
+          setProcessing(false);
+        });
     }
   };
   return (
@@ -75,6 +117,15 @@ const Checkoutfrom = ({ book }) => {
         </div>
       </form>
       {cardError && <p className="text-red-500">{cardError}</p>}
+      {success && (
+        <div className="text-green-500">
+          <p>{success} </p>
+          <p>
+            Your transaction Id:
+            <span className="text-orange-500 font-bold">{trxId}</span>
+          </p>
+        </div>
+      )}
     </div>
   );
 };
