@@ -37,7 +37,6 @@ const SingleOrder = ({ order }) => {
         <p>Price: ${price}</p>
       </div>
       <span className="flex justify-between p-5">
-        {/* <button>Pay Now</button> */}
         {price && !paid && (
           <Link
             to={`/dashboard/payment/${order._id}`}
