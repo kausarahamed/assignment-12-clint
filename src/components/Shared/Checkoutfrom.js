@@ -6,6 +6,7 @@ const Checkoutfrom = ({ book }) => {
   const elements = useElements();
   const [cardError, setCardError] = useState("");
   const [clintSecret, setClintSecret] = useState("");
+  console.log(clintSecret);
   const { price } = book;
   useEffect(() => {
     fetch("http://localhost:5000/create-payment-intent", {
@@ -18,8 +19,9 @@ const Checkoutfrom = ({ book }) => {
     })
       .then((res) => res.json())
       .then((data) => {
-        if (data?.clintSecret) {
-          setClintSecret(data.clintSecret);
+        console.log(data);
+        if (data?.clientSecret) {
+          setClintSecret(data.clientSecret);
         }
       });
   }, [price]);
