@@ -42,7 +42,7 @@ const RowUser = ({ user, refetch }) => {
   const { email, role } = user;
   const [requestier] = useAuthState(auth);
   const makeAdmin = () => {
-    fetch(`http://localhost:5000/owner/admin/${email}`, {
+    fetch(`https://pacific-lowlands-87873.herokuapp.com/owner/admin/${email}`, {
       method: "PUT",
       headers: { "content-type": "application/json" },
       body: JSON.stringify(requestier),
