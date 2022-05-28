@@ -5,11 +5,15 @@ import auth from "../firebase.init";
 import useAdmin from "./useAdmin";
 
 const DashBoard = () => {
-  // const [user] = useAuthState(auth);
-  // const [admin] = useAdmin(user);
+  const [user] = useAuthState(auth);
+  const [admin] = useAdmin(user);
   return (
     <div class="drawer drawer-mobile">
-      <input id="my-drawer-2" type="checkbox" class="drawer-toggle" />
+      <input
+        id="https://pacific-lowlands-87873.herokuapp.com/-2"
+        type="checkbox"
+        class="drawer-toggle"
+      />
       <div class="drawer-content">
         <h1 className="text-3xl text-secondary">My DashBoard</h1>
         <Outlet></Outlet>
@@ -36,9 +40,11 @@ const DashBoard = () => {
             <Link to="/dashboard/makeadmin">All Users</Link>
           </li>
 
-          <li>
-            <Link to="/dashboard/allusers">Admin</Link>
-          </li>
+          {admin && (
+            <li>
+              <Link to="/dashboard/allusers">Admin</Link>
+            </li>
+          )}
         </ul>
       </div>
     </div>
