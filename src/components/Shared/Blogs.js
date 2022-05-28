@@ -43,44 +43,47 @@ const Blogs = () => {
       <div>
         <div class="card w-96 bg-base-100 shadow-xl">
           <div class="card-body">
-            <h2 class="card-title">Card title!</h2>
-            <p>If a dog chews shoes whose shoes does he choose?</p>
-            <div class="card-actions justify-end">
-              <button class="btn btn-primary">Buy Now</button>
-            </div>
+            <h2 class="card-title">How does prototypical inheritance work?</h2>
+            <p>
+              The Prototypal Inheritance is a feature in javascript used to add
+              methods and properties in objects. It is a method by which an
+              object can inherit the properties and methods of another object.
+              Traditionally, in order to get and set the [Prototype] of an
+              object, we use Object.getPrototypeOf and Object.
+            </p>
           </div>
         </div>
       </div>
       <div>
         <div class="card w-96 bg-base-100 shadow-xl">
           <div class="card-body">
-            <h2 class="card-title">Card title!</h2>
-            <p>If a dog chews shoes whose shoes does he choose?</p>
-            <div class="card-actions justify-end">
-              <button class="btn btn-primary">Buy Now</button>
-            </div>
+            <h2 class="card-title">
+              What is a unit test? Why should write unit tests?
+            </h2>
+            <p>
+              Unit testing involves the testing of each unit or an individual
+              component of the software application. It is the first level of
+              functional testing. The aim behind unit testing is to validate
+              unit components with its performance.Unit testing helps tester and
+              developers to understand the base of code that makes them able to
+              change defect causing code quickly. Unit testing helps in the
+              documentation. Unit testing fixes defects very early in the
+              development phase that's why there is a possibility to occur a
+              smaller number of defects in upcoming testing levels. It helps
+              with code reusability by migrating code and test cases.
+            </p>
           </div>
         </div>
       </div>
       <div>
         <div class="card w-96 bg-base-100 shadow-xl">
           <div class="card-body">
-            <h2 class="card-title">Card title!</h2>
-            <p>If a dog chews shoes whose shoes does he choose?</p>
-            <div class="card-actions justify-end">
-              <button class="btn btn-primary">Buy Now</button>
-            </div>
-          </div>
-        </div>
-      </div>
-      <div>
-        <div class="card w-96 bg-base-100 shadow-xl">
-          <div class="card-body">
-            <h2 class="card-title">Card title!</h2>
-            <p>If a dog chews shoes whose shoes does he choose?</p>
-            <div class="card-actions justify-end">
-              <button class="btn btn-primary">Buy Now</button>
-            </div>
+            <h2 class="card-title">
+              You have an array of products. Each product has a name, price,
+              description, etc. How will you implement a search to find products
+              by name?
+            </h2>
+            <p>Array.filter((pd) = > pd.name.includes("value of name"))</p>
           </div>
         </div>
       </div>
