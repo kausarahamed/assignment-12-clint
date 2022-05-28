@@ -33,11 +33,11 @@ const DashBoard = () => {
             <Link to="/dashboard/myitem">My Items</Link>
           </li>
           <li>
-            <Link to="/dashboard/makeadmin">Admin</Link>
+            <Link to="/dashboard/makeadmin">All Users</Link>
           </li>
 
           <li>
-            <Link to="/dashboard/allusers">All Users</Link>
+            <Link to="/dashboard/allusers">Admin</Link>
           </li>
         </ul>
       </div>
