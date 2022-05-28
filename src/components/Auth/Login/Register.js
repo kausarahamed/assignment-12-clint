@@ -59,7 +59,7 @@ const Register = () => {
           </label>
           <input
             onBlur={handleName}
-            className=" btn text-xl border w-full p-2"
+            className=" btn lowercase text-xl border w-full p-2"
             type="text"
             name="name"
             id=""
@@ -71,7 +71,7 @@ const Register = () => {
           </label>
           <input
             onBlur={handleEmail}
-            className="btn text-xl border w-full p-2"
+            className="btn lowercase text-xl border w-full p-2"
             type="email"
             name="email"
             required
@@ -83,7 +83,7 @@ const Register = () => {
           </label>
           <input
             onBlur={handlePassword}
-            className="border w-full btn text-xl p-2"
+            className="border lowercase w-full btn text-xl p-2"
             type="password"
             name="password"
             required
@@ -95,7 +95,7 @@ const Register = () => {
           </label>
           <input
             onBlur={handleConfirmPassword}
-            className="border w-full btn text-2xl p-2"
+            className="border lowercase w-full btn text-2xl p-2"
             type="password"
             name="confirm password"
             required

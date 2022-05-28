@@ -30,6 +30,9 @@ const DashBoard = () => {
           <li>
             <Link to="/dashboard/makeadmin">Admin</Link>
           </li>
+          <li>
+            <Link to="/dashboard/allusers">All Users</Link>
+          </li>
         </ul>
       </div>
     </div>

@@ -2,6 +2,7 @@ import { Route, Routes } from "react-router-dom";
 import "./App.css";
 import About from "./components/About";
 import Addreview from "./components/Addreview";
+import Allusers from "./components/Admin/Allusers";
 import MakeAdmin from "./components/Admin/MakeAdmin";
 import Login from "./components/Auth/Login/Login";
 import Register from "./components/Auth/Login/Register";
@@ -44,6 +45,7 @@ function App() {
           <Route path="additem" element={<AddItem></AddItem>}></Route>
           <Route path="myitem" element={<MyItem></MyItem>}></Route>
           <Route path="makeadmin" element={<MakeAdmin></MakeAdmin>}></Route>
+          <Route path="allusers" element={<Allusers></Allusers>}></Route>
         </Route>
         <Route
           path="/purchase/:id"

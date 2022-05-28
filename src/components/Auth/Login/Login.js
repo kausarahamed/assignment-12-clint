@@ -58,7 +58,7 @@ const Login = () => {
           </label>
           <input
             onBlur={handleEmail}
-            className="btn text-xl p-2 border w-full"
+            className="btn lowercase text-xl p-2 border w-full"
             type="email"
             name="email"
             required
@@ -70,7 +70,7 @@ const Login = () => {
           </label>
           <input
             onBlur={handlePassword}
-            className="btn text-2xl border w-full p-2"
+            className="btn lowercase text-2xl border w-full p-2"
             type="password"
             name="password"
             required

@@ -49,6 +49,7 @@ const Checkoutfrom = ({ book }) => {
     }
     setSuccess("");
     setProcessing(true);
+
     //confirm
     const { paymentIntent, error: intentError } =
       await stripe.confirmCardPayment(clintSecret, {
@@ -73,6 +74,7 @@ const Checkoutfrom = ({ book }) => {
         book: _id,
         trxId: paymentIntent.id,
       };
+
       fetch(`https://pacific-lowlands-87873.herokuapp.com/booking/${_id}`, {
         method: "PATCH",
         headers: {
