@@ -40,7 +40,7 @@ const MakeAdmin = () => {
             <th>Name</th>
             <th>Email</th>
 
-            <th>Make Admin</th>
+            <th>Delete User</th>
           </tr>
         </thead>
         <tbody>
@@ -50,7 +50,10 @@ const MakeAdmin = () => {
               <td>{user.email}</td>
 
               <span className="flex gap-5">
-                <button onClick={() => deleteHandeler(user._id)}>
+                <button
+                  className="btn btn-square"
+                  onClick={() => deleteHandeler(user._id)}
+                >
                   <MdDeleteForever />
                 </button>
               </span>
